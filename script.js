@@ -1,5 +1,5 @@
 // Constants
-const LOVE_START_DATE = new Date(2024, 7, 13); // 14 February, 2024
+const LOVE_START_DATE = new Date(2024, 7, 13); 
 const LOVE_CODE = "13072024";
 const STORAGE_KEY = "loveBoxUnlocked";
 const TOTAL_PAGES = 5;
@@ -237,7 +237,7 @@ class App {
         const daysSinceStart = Math.floor((new Date() - LOVE_START_DATE) / (1000 * 60 * 60 * 24));
         element.innerHTML = `
             <p class="days-counter-text">
-                Chúng mình đã bên nhau được ${daysSinceStart} ngày rồi đó 💑
+                Chúng mình đã bên nhau được 216 ngày rồi đó 💑
             </p>
         `;
     }
