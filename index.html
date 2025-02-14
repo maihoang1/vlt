@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Love Story 💝</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" id="bg" >
+  <!-- Background gradient -->
+  <defs>
+    <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffe6e6"/>
+      <stop offset="100%" style="stop-color:#ffb3b3"/>
+    </linearGradient>
+    
+    <!-- Heart pattern definition -->
+    <pattern id="heart-pattern" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
+      <path d="M25,40 A10,10 0 0,1 40,25 A10,10 0 0,1 55,40 Q40,60 25,40" 
+        fill="#ff6b6b" opacity="0.3"/>
+    </pattern>
+  </defs>
+
+  <!-- Background with gradient -->
+  <rect width="100%" height="100%" fill="url(#bg-gradient)"/>
+  
+  <!-- Pattern overlay -->
+  <rect width="100%" height="100%" fill="url(#heart-pattern)"/>
+  
+  <!-- Large decorative hearts -->
+  <g transform="translate(400,300)">
+    <!-- Central large heart -->
+    <path d="M-40,0 A40,40 0 0,1 0,-40 A40,40 0 0,1 40,0 Q0,60 -40,0" 
+      fill="#ff4d4d" opacity="0.8">
+      <animate attributeName="opacity" 
+        values="0.8;0.6;0.8" 
+        dur="2s" 
+        repeatCount="indefinite"/>
+    </path>
+  </g>
+
+  <!-- Falling hearts -->
+  <g>
+    <!-- Heart 1 -->
+    <path d="M-20,0 A20,20 0 0,1 0,-20 A20,20 0 0,1 20,0 Q0,30 -20,0" 
+      fill="#ff6b6b" opacity="0.7">
+      <animateMotion 
+        path="M100,-100 L150,700" 
+        dur="4s" 
+        repeatCount="indefinite"/>
+      <animateTransform 
+        attributeName="transform"
+        type="rotate"
+        from="0 0 0"
+        to="360 0 0"
+        dur="4s"
+        repeatCount="indefinite"/>
+    </path>
+
+    <!-- Heart 2 -->
+    <path d="M-15,0 A15,15 0 0,1 0,-15 A15,15 0 0,1 15,0 Q0,22 -15,0" 
+      fill="#ff8080" opacity="0.6">
+      <animateMotion 
+        path="M300,-50 L250,700" 
+        dur="3s" 
+        repeatCount="indefinite"/>
+      <animateTransform 
+        attributeName="transform"
+        type="rotate"
+        from="0 0 0"
+        to="-360 0 0"
+        dur="3s"
+        repeatCount="indefinite"/>
+    </path>
+
+    <!-- Heart 3 -->
+    <path d="M-25,0 A25,25 0 0,1 0,-25 A25,25 0 0,1 25,0 Q0,37 -25,0" 
+      fill="#ff4d4d" opacity="0.8">
+      <animateMotion 
+        path="M500,-150 L450,700" 
+        dur="5s" 
+        repeatCount="indefinite"/>
+      <animateTransform 
+        attributeName="transform"
+        type="rotate"
+        from="0 0 0"
+        to="360 0 0"
+        dur="5s"
+        repeatCount="indefinite"/>
+    </path>
+
+    <!-- Heart 4 -->
+    <path d="M-18,0 A18,18 0 0,1 0,-18 A18,18 0 0,1 18,0 Q0,27 -18,0" 
+      fill="#ff9999" opacity="0.7">
+      <animateMotion 
+        path="M700,-80 L650,700" 
+        dur="4.5s" 
+        repeatCount="indefinite"/>
+      <animateTransform 
+        attributeName="transform"
+        type="rotate"
+        from="0 0 0"
+        to="-360 0 0"
+        dur="4.5s"
+        repeatCount="indefinite"/>
+    </path>
+  </g>
+  
+  <!-- Decorative text -->
+  <text x="400" y="550" 
+    font-family="cursive" 
+    font-size="24" 
+    fill="#ff3333"
+    text-anchor="middle">
+    Happy Valentine's Day
+  </text>
+</svg>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-heart">💝</div>
+        <div class="loading-text">Đang tải câu chuyện tình yêu...</div>
+    </div>
+
+    <!-- Lock Screen -->
+    <div class="lock-screen" id="lockScreen">
+        <h1>💝 Câu Chuyện Tình Yêu Của Chúng Mình 💝</h1>
+        <p>Hãy nhập ngày đặc biệt của chúng mình (DDMMYYYY)</p>
+        <input type="password" class="love-code-input" id="loveCode" placeholder="Nhập mã tình yêu" maxlength="8">
+        <button class="submit-btn" onclick="checkLoveCode()">Mở Trái Tim</button>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content" id="mainContent">
+        <div class="book" id="book">
+            <div class="book-cover" id="bookCover">
+                <div class="cover-front">
+                    <div class="cover-decoration"></div>
+                    <h1 class="book-title">Nhật Ký Tình Yêu</h1>
+                    <p>Chạm để mở 💝</p>
+                </div>
+            </div>
+
+            <div class="book-page" id="page1">
+                <h2>Thư Gửi Em 💌</h2>
+                <div class="letter-content">
+                    <p>Hiền yêu dấu,</p>
+                    <p>Mỗi khoảnh khắc ở bên em đều là những khoảnh khắc vô cùng quý giá và đáng trân trọng đối với anh. Em mang đến cho cuộc sống của anh những ý nghĩa mới mẻ, những niềm vui và hạnh phúc mà anh chưa từng cảm nhận được trước đây.</p>
+                    <p>Cảm ơn em vì đã là một phần cuộc sống của anh.</p>
+                    <p>Hoàng Yêu Hiền dất nhiều! 💖</p>
+                </div>
+                <div class="page-nav">
+                    <button class="nav-button next-btn">Tiếp →</button>
+                </div>
+                <div class="page-number">1</div>
+            </div>
+
+            <div class="book-page" id="page2">
+                <h2>Câu Chuyện Của Chúng Mình 📖</h2>
+                <div class="story-content">
+                    <p>Ngày ấy, khi anh gặp em...</p>
+                    <p>Mọi thứ xung quanh bỗng trở nên đẹp đẽ hơn.</p>
+                    <div id="daysCounter"></div>
+                    <p>Mỗi ngày trôi qua là một ngày hạnh phúc khi có em bên cạnh.</p>
+                </div>
+<div class="page-nav">
+                    <button class="nav-button prev-btn">← Trước</button>
+                    <button class="nav-button next-btn">Tiếp →</button>
+                </div>
+                <div class="page-number">2</div>
+            </div>
+
+            <div class="book-page" id="page3">
+                <h2>Kỷ Niệm Đáng Nhớ ✨</h2>
+                <div class="memories-content">
+                    <div class="memory-item" id="p1">
+                        <h3>buổi hẹn hò đầu tiên - 30/07/2024</h3>
+                        <p>Ngày đặc biệt đầu tiên của chúng mình,mặc dù có những sự ngại ngùng nhưng đây là một ngày tràn ngập niềm vui và hạnh phúc </p>
+                    </div>
+                    <div class="memory-item" id="p2">
+                        <h3>Nụ hôn đầu tiên</h3>
+                        <p>cái cảm xúc lúc đấy thật khó tả hồi hộp,hạnh phúc, tim đập nhanh nhưng ấm áp vô cùng,...</p>
+                    </div>
+                    <div class="memory-item" id="p3">
+                        <h3>những lúc ngồi với nhau....</h3>
+			<p>anh cảm thấy lòng thật bình yên khi ngồi ôm em,chỉ muốn ngủ 1 giấc thật lâu....  </p>
+                    </div>
+		
+			<div class="memory-item" id="p4"></div>
+			<div class="memory-item" id="p5"></div>
+			<div class="memory-item" id="p6"></div>
+			<div class="memory-item" id="p7">
+				 <h3>Những món ăn mình cùng nhau ăn</h3>
+                       		 <p>nhìn em hay ăn đồ ăn anh nấu hay ngoài anh cảm thấy vui lắm</p>
+			</div>
+			<div class="memory-item" id="p8"></div>
+			<div class="memory-item" id="p9"></div>
+			<div class="memory-item" id="p10"></div	
+                </div>
+                
+                <div class="page-number">3</div>
+            </div>
+		<div class="page-nav">
+                    <button class="nav-button prev-btn">← Trước</button>
+<button class="nav-button next-btn">Tiếp →</button>
+                </div>
+        </div>
+	<div class="book-page" id="page4">
+                <h2>Tiếp tục nè</h2>
+                <div class="memories-content">
+                    <div class="memory-item" id="p11"></div>
+                </div>
+<div class="page-nav">
+                    <button class="nav-button prev-btn">← Trước</button>
+                    <button class="nav-button next-btn">Tiếp →</button>
+                </div>
+                <div class="page-number">4</div>
+            </div>
+
+		<div class="book-page" id="page5">
+                <h2>lời xin lỗi 🥹🥹🥹🥹</h2>
+                <div class="memories-content">
+                    <p>anh rất xin lỗi em những ngày nay vì anh đã cáu với em vô cớ đã làm em buồn lòng và thất vọng rất nhiều,cho anh xin lũi nhóa nhóa nhóa, đừng buồn anh nữa nhóa nhóa nhóa vì Hiền là 1 người rộng lượng  </p>
+			
+                </div>
+<div class="page-nav">
+                    <button class="nav-button prev-btn">← Trước</button>
+                                    </div>
+                <div class="page-number">4</div>
+            </div>
+
+    </div>
+<script src="script.js"></script>
+</body>
+</html>
